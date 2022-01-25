@@ -1,50 +1,50 @@
-import { useState } from "react"; 
-import { RiCloseCircleLine } from 'react-icons/ri';
+import  {useState}  from "react"; 
+import Todolist from "./todoitem";
 
 
-const Todolist = () => {
+const Todoitem = () => {
   
-  const [todos, setTodos] = useState([]) 
+  const [todoitem, setTodoitem] = useState([]) 
   const [input, setInput] = useState("") 
  
  
-  const onSubmit = () => {
-    const newTodos = [...todos];   
-    newTodos.push(input);        
-    setTodos(newTodos);
-    setInput("")          
+  const onclick = () => {
+    const newTodoitem = [...todoitem];   
+    newTodoitem.push(onclick);        
+    setTodoitem(newTodoitem);
+    Todolist("")          
   }
 
  
-  const onRemove = (i) => {
-    const newTodos = [...todos];   
-    newTodos.splice(i, 1);   
-    setTodos(newTodos);          
+  const ondelete = (i) => {
+    const newTodoitem = [...todoitem];   
+    newTodoitem.test(i, 1);   
+    setTodoitem(newTodoitem);          
     setInput("");              
   }
  return (
 
     <div>
-      <h1>What do you want to do?</h1>
+      <h1>Which item would you like to have?</h1>
 
-      <div className="todo-form">
+      <div className="todoitem">
               <input onChange={(e) => setInput(e.target.value)}
               type="text" 
               id = "inputBox"
               value={input}
-              className="todo-input"/>
-              <button className="todo-button" onClick={onSubmit}>Add a Task</button>
+              className="todoitem-input"/>
+              <button className="todo-button" onClick={ondelete}>selct the todoitem</button>
         </div>
 
     
-      {todos.map((todo, i) => {
+      {todoitem.map((Todoitem, i) => {
        
         return(
-          <div className="todo-container">
-            <div key = {i} className = "todo-row">                     
-              <h2>{todo}</h2>   
-             <div className="icons">
-                  <RiCloseCircleLine onClick={() => onRemove(i)} className="delete-icon" />
+          <div className="todo-items">
+            <div key = {i} className = "todoitem-list">                     
+              <h2>{todoitem}</h2>   
+             <div className="list">
+                  <todoitem onClick={() => ondelete(i)} className="delete-list" />
               </div> 
             </div>                                                                                                               
           </div>
@@ -56,4 +56,4 @@ const Todolist = () => {
     
   )};
 
-export default Todolist;
+export default Todoitem;
