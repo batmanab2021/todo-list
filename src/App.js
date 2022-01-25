@@ -1,13 +1,13 @@
+import "./App.css" 
+import Todolist from "./components/Todolist"
 
-import './App.css';
-import Todoitem from './todoitem';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Todoitem/>
+    <div>
+      <Todolist/>
     </div>
-  );
+    
+  ) 
 }
 
-export default App;
+export default App

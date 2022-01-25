@@ -1,29 +1,15 @@
-
-
-.flex nav{
-  background-color: aqua;
-  border: #0c4757;
+h1{
+  text-align: center;
 }
-
-flex container
-.flex-nav ul {
-  border: 0px solid blue;
-  list-style: inside;
-  margin: 0;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+body{
+  background-color: aquamarine;
+  
 }
-
-@media all and (max-width:1000px) {
-  .flex-nav ul li{
-    width: 50%;
-  }
-  .flex-nav .social{
-    width: auto;
-  }
+div{
+  text-align: center;
 }
-.App{
-  height: auto;
+button{
+  margin-left: 20px;
+  background-color: rgb(149, 158, 25);
+  color:white;
 }
