@@ -1,30 +1,34 @@
+import { useState } from 'react';
 
-import {useState} from "react"
-const Todolist= () => {
+const Todolist = () => {
+    const [list, setList] = useState([]);
+    const [input, setInput] = useState('');
 
-const [list,setList] = useState([])
-const [input,setInput] = useState("")
-
-const onSubmit = () => {
-    const newItem = [...list]
-    newItem.push(input)
-    setList(newItem)
-    setInput("")
-    
-}
-
-return (
-   
-   
-    <div>
-        <h1>My Todo list</h1>
-    
-        
-            <input type="text" value={input} id="inputBox" onChange={(e)=>(e.target.value)}/>
-            <button onClick={onSubmit}>Add to list </button>
-        <h2>{list}</h2>
+    return (
+        <div>
+            <h1>My Todo list</h1>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    console.log('testing');
+                    setList([...list, input]);
+                    setInput('');
+                }}>
+                <input
+                    value={input}
+                    type="text"
+                    onChange={(e) => setInput(e.target.value)}></input>
+                <button type="submit">Add to list </button>
+                <ul>
+                    {list.map((e) => (
+                        <li>
+                            <h2>{e}</h2>
+                        </li>
+                    ))}
+                </ul>
+            </form>
         </div>
-)
-}
+    );
+};
 
-export default Todolist
+export default Todolist;
